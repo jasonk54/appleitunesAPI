@@ -1,11 +1,28 @@
 <!doctype html>
 <html>
   <head>
+    <link rel="stylesheet" href="playhaven.css">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="Handlebars.js"></script>
+    <script src="underscore-min.js"></script>
     <script src="playhaven.js"></script>
   </head>
   <body>
-    <input id="searchBox" type="text" />
-    <div class="searchContent"></div>
+    <div class="container">
+    <div class="search">
+      <input id="searchBox" type="text" placeholder="Search" />
+    </div>
+    <div class="side">
+      <h3>Type of files available:</h3>
+      <div class="sidePanel"></div>
+      <h3>Preview: </h3>
+      <div class="previewPanel"></div>
+    </div>
+    <div class="content">
+      <h3>Matching searches: </h3>
+        <div class="searchContent"></div>
+    </div>
+  </div>
   </body>
 </html>
