@@ -41,9 +41,17 @@ var PlayHaven = function() {
       for (var i = 0; i < data.results.length; i++) {
         $('.searchContent').append("<div class=" + i + ">Name: " + data.results[i].artistName + "</div>")
         $('.searchContent').append("<div class=" + i + ">Track Name: " + data.results[i].trackName +
-          "</div><input type='button' class='preview' value='Preview'></input><br><br>")
+          "</div><input type='button' class='preview' data-previewfile='" + data.results[i].previewUrl + "' value='Preview'></input><br><br>")
       };
 
+      // Embeds media file on the DOM when preview button is clicked
+      $('.preview').click(function(el) {
+        var previewLink = ($(el.target).data('previewfile'));
+        $('.previewPanel').empty().append("<div><embed src=" + previewLink + " width='100%' height='100%'></div>")
+        setTimeout(function() {
+          $('.previewPanel').hide('slow');
+        }, 40000);
+      })
       // replace this with a templating engine, such as handlerbars or underscore
       // for (var i = 0; i < data.results.length; i++) {
         // if clicked embed data.results[i].previewUrl
