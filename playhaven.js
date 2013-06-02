@@ -29,6 +29,8 @@ var PlayHaven = function() {
       // Removes duplicate copy of the entities property and outputs type of file
       var getKind = _.pluck(data.results, 'kind')
       var kind = _.uniq(getKind);
+      $('.side').show();
+      $('.content').show();
 
       // Appends type of files
       $('.sidePanel').empty();                           // Clears before appending
@@ -44,39 +46,13 @@ var PlayHaven = function() {
           "</div><input type='button' class='preview' data-previewfile='" + data.results[i].previewUrl + "' value='Preview'></input><br><br>")
       };
 
-      // Embeds media file on the DOM when preview button is clicked
+      // Embeds media file on the DOM - via Modal - when preview button is clicked.  Hides the preview after 40 seconds has elasped
       $('.preview').click(function(el) {
         var previewLink = ($(el.target).data('previewfile'));
-        $('.previewPanel').empty().append("<div><embed src=" + previewLink + " width='100%' height='100%'></div>")
-        setTimeout(function() {
-          $('.previewPanel').hide('slow');
-        }, 40000);
-      })
-      // replace this with a templating engine, such as handlerbars or underscore
-      // for (var i = 0; i < data.results.length; i++) {
-        // if clicked embed data.results[i].previewUrl
-        // $('.searchContent').append("<div class=" + i + ">" + data.results[i].artistName + "</div>");
-
-        // $('#previewPanel').append("<embed src=" + data.results[i].previewUrl + " width='100%' height='60'>");
-        // console.log(data.results[i].artistName);
-        // console.log('collection: ' + data.results[i].collectionName);
-        // console.log('track: ' + data.results[i].trackName)
-      // };
-
-      // When the kind is clicked, embeds a preview of that file
-      // $('.searchContent').click(function(e) {
-      //   var x = $(e.target).attr('class');
-      //   console.log(x)
-      //   $('.previewPanel').append("<div><embed src=" + data.results[x].previewUrl + " width='100%' height='60%'></div>");
-      // })
+        $('.modal-body').empty().append("<div><embed src=" + previewLink + " width='100%' height='100%'></div>");
+        $('#myModal').modal('show');
+      });
     }
-    // // Filters the output
-    // filter: function(content) {
-    //   $('#searchBox').hide();
-    //   $('#filterBox').toggle();
-    //   var filterContent = $('#filterBox').val();
-    // },
-
   };
 
   var appleAJAXHandlers = {

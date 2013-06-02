@@ -1,9 +1,10 @@
 <!doctype html>
 <html>
   <head>
-    <link rel="stylesheet" href="playhaven.css">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.1/jquery.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="playhaven.css">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="Handlebars.js"></script>
     <script src="underscore-min.js"></script>
     <script src="playhaven.js"></script>
@@ -16,9 +17,15 @@
     <div class="side">
       <h3>Type of files available:</h3>
       <div class="sidePanel"></div>
-      <h3>Preview: </h3>
-      <div class="previewPanel"></div>
     </div>
+
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <h3>Preview</h3>
+      </div>
+      <div class="modal-body"></div>
+    </div>
+
     <div class="content">
       <h3>Matching searches: </h3>
         <div class="searchContent"></div>
