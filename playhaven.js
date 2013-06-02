@@ -1,6 +1,11 @@
+// TODO: Add templating
+// TODO: Use backbone to organize code
+// TODO: Add preview pop-up
+// TODO: Filter option
+
 var PlayHaven = function() {
   var timer, text, entity;
-  var typingInterval = 3000;
+  var typingInterval = 2500;
 
   var helpers = {
     doneTyping: function() {
@@ -26,17 +31,18 @@ var PlayHaven = function() {
       var kind = _.uniq(getKind);
 
       // Appends type of files
-      $('.sidePanel').empty();  // Clears before appending
+      $('.sidePanel').empty();                           // Clears before appending
       for (var i = 0; i < kind.length; i++) {
          $('.sidePanel').append("<div class='type'>" + kind[i] +  "</div>");
       };
 
       // Appends artist name and track name.  All genre
-      $('.searchContent').empty();  // Clears before appending
+      $('.searchContent').empty();                      // Clears before appending
       for (var i = 0; i < data.results.length; i++) {
         $('.searchContent').append("<div class=" + i + ">Name: " + data.results[i].artistName + "</div>")
-        $('.searchContent').append("<div class=" + i + ">Track Name: " + data.results[i].trackName + "</div><input type='button' class='preview' value='Preview'></input><br><br>")
-      }
+        $('.searchContent').append("<div class=" + i + ">Track Name: " + data.results[i].trackName +
+          "</div><input type='button' class='preview' value='Preview'></input><br><br>")
+      };
 
       // replace this with a templating engine, such as handlerbars or underscore
       // for (var i = 0; i < data.results.length; i++) {
