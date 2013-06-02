@@ -1,6 +1,5 @@
 // TODO: Add templating
 // TODO: Use backbone to organize code
-// TODO: Filter option
 
 var PlayHaven = function() {
   var timer, text, entity;
