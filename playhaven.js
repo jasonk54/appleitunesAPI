@@ -1,11 +1,10 @@
 // TODO: Add templating
 // TODO: Use backbone to organize code
-// TODO: Add preview pop-up
 // TODO: Filter option
 
 var PlayHaven = function() {
   var timer, text, entity;
-  var typingInterval = 2500;
+  var typingInterval = 2000;
 
   var helpers = {
     doneTyping: function() {
@@ -27,7 +26,7 @@ var PlayHaven = function() {
     // Parses data, and popluates the correct content
     parsedOutput: function(data) {
       // Removes duplicate copy of the entities property and outputs type of file
-      var getKind = _.pluck(data.results, 'kind')
+      var getKind = _.pluck(data.results, 'kind');
       var kind = _.uniq(getKind);
       $('.side').show();
       $('.content').show();
@@ -41,12 +40,12 @@ var PlayHaven = function() {
       // Appends artist name and track name.  All genre
       $('.searchContent').empty();                      // Clears before appending
       for (var i = 0; i < data.results.length; i++) {
-        $('.searchContent').append("<div class=" + i + ">Name: " + data.results[i].artistName + "</div>")
-        $('.searchContent').append("<div class=" + i + ">Track Name: " + data.results[i].trackName +
+        $('.searchContent').append("<div class='contentlist' data-filetype='" + data.results[i].kind + "'>Name: " + data.results[i].artistName + "</div>");
+        $('.searchContent').append("<div class='contentlist' data-filetype='" + data.results[i].kind + "'>Track Name: " + data.results[i].trackName +
           "</div><input type='button' class='preview' data-previewfile='" + data.results[i].previewUrl + "' value='Preview'></input><br><br>")
       };
 
-      // Embeds media file on the DOM - via Modal - when preview button is clicked.  Hides the preview after 40 seconds has elasped
+      // Embeds media file on the DOM - via Modal - when preview button is clicked.
       $('.preview').click(function(el) {
         var previewLink = ($(el.target).data('previewfile'));
         $('.modal-body').empty().append("<div><embed src=" + previewLink + " width='100%' height='100%'></div>");
@@ -64,7 +63,7 @@ var PlayHaven = function() {
     }
   };
 
-  // Call helpers.doneTyping on last keystroke (on release) after 3 seconds
+  // Call helpers.doneTyping on last keystroke (on release) after 2 seconds
   $('#searchBox').keyup(function() {
     // Replace this with underscore's debounce method
     clearTimeout(timer);

@@ -1,12 +1,31 @@
 .modal-body {
   height: 100%;
+  width: auto;
 }
 
 .side {
   display: none;
+  position: relative;
+  top: 3em;
+  text-align: center;
+  padding: 1em;
+  background-color: whitesmoke;
 }
 
 .content {
   display: none;
+  position: relative;
+  top: 5em;
+  padding: 2em;
+  background-color: whitesmoke;
 }
 
+.search {
+  text-align: center;
+  top: 2em;
+  position: relative;
+}
+
+#searchBox {
+  overflow: scroll;
+}
