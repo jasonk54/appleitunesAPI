@@ -17,6 +17,7 @@ body {
   top: 3em;
   text-align: center;
   padding: 1em;
+  border-radius: 10px;
 
   background-color: whitesmoke;
 }
@@ -27,6 +28,7 @@ body {
   position: relative;
   top: 5em;
   padding: 2em;
+  border-radius: 10px;
 
   background-color: whitesmoke;
 }
