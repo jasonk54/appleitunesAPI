@@ -12,25 +12,33 @@
   </head>
   <body>
     <div class="container">
-    <div class="search">
-      <input id="searchBox" class="span3" type="text" placeholder="Search Itunes" />
-    </div>
-    <div class="side">
-      <h3>Available File Types</h3>
-      <div class="sidePanel"></div>
-    </div>
-
-    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-header">
-        <h3>Preview</h3>
+      <div class="search">
+        <input id="searchBox" class="span3" type="text" placeholder="Search Itunes" />
+        <div class="greetings">
+          <p><h4>Hello PlayHaven!</h4></p>
+          <p>This project will be an on-going project that will be pushed up to <a href="https://github.com/jasonk54/search_apple" target="__blank">GitHub</a>.</p>
+          <p>The script will make a AJAX call to Itunes on keystroke up anytime there is a .5 second delay between characters.  The content field will update as needed as the user is typing in the search field.  This is can be observed by typing in the search box very slowly.</p>
+          <p>I will be updating the code base with Backbone.js and Handlebar.js for my templating needs starting next week.</p>
+          <p>As it stands right now, the total time it took to complete the code base stands at 3 hours.  This was partially due to several bugs that I ran into while utilizing Itunes API.</p>
+          <p>Thanks for the opportunity and I look forward to hearing for you!</p>
+        </div>
       </div>
-      <div class="modal-body"></div>
-    </div>
+      <div class="side">
+        <h3>Available File Types</h3>
+        <div class="sidePanel"></div>
+      </div>
 
-    <div class="content">
-      <h3>Matching Searches</h3>
-        <div class="searchContent"></div>
+      <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+          <h3>Preview</h3>
+        </div>
+        <div class="modal-body"></div>
+      </div>
+
+      <div class="content">
+        <h3>Matching Searches</h3>
+          <div class="searchContent"></div>
+      </div>
     </div>
-  </div>
   </body>
 </html>

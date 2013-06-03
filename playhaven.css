@@ -2,6 +2,9 @@ body {
   background-color: #BDC3C7;
 }
 
+#myModal {
+  background-color: #7F8C8D;
+}
 .modal-body {
   height: 100%;
   width: auto;
@@ -9,24 +12,29 @@ body {
 
 .side {
   display: none;
+
   position: relative;
   top: 3em;
   text-align: center;
   padding: 1em;
+
   background-color: whitesmoke;
 }
 
 .content {
   display: none;
+
   position: relative;
   top: 5em;
   padding: 2em;
+
   background-color: whitesmoke;
 }
 
 .search {
   text-align: center;
   top: 2em;
+
   position: relative;
 }
 
@@ -36,8 +44,10 @@ body {
 
 .searchContent {
   margin-top: 1em;
+  margin-left: 1em;
 }
 
-h5 {
-  display: inline;
+.preview {
+  margin-top: .5em;
+  margin-bottom: 1em;
 }
