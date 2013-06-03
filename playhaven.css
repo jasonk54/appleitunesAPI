@@ -1,3 +1,7 @@
+body {
+  background-color: #BDC3C7;
+}
+
 .modal-body {
   height: 100%;
   width: auto;
@@ -28,4 +32,12 @@
 
 #searchBox {
   overflow: scroll;
+}
+
+.searchContent {
+  margin-top: 1em;
+}
+
+h5 {
+  display: inline;
 }

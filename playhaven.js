@@ -3,7 +3,7 @@
 
 var PlayHaven = function() {
   var timer, text, entity;
-  var typingInterval = 2000;
+  var typingInterval = 1000;
 
   var helpers = {
     doneTyping: function() {
@@ -41,14 +41,19 @@ var PlayHaven = function() {
       for (var i = 0; i < data.results.length; i++) {
         $('.searchContent').append("<div class='contentlist' data-filetype='" + data.results[i].kind + "'>Name: " + data.results[i].artistName + "</div>");
         $('.searchContent').append("<div class='contentlist' data-filetype='" + data.results[i].kind + "'>Track Name: " + data.results[i].trackName +
-          "</div><input type='button' class='preview' data-previewfile='" + data.results[i].previewUrl + "' value='Preview'></input><br><br>")
+          "</div><input type='button' class='preview btn btn-primary' data-previewfile='" + data.results[i].previewUrl + "' value='Preview' style='margin-top:.5em'></input><br><br>")
       };
 
       // Embeds media file on the DOM - via Modal - when preview button is clicked.
       $('.preview').click(function(el) {
-        var previewLink = ($(el.target).data('previewfile'));
-        $('.modal-body').empty().append("<div><embed src=" + previewLink + " width='100%' height='100%'></div>");
-        $('#myModal').modal('show');
+        var previewLink = $(el.target).data('previewfile');
+        console.log(previewLink)
+        if (previewLink) {
+          $('.modal-body').empty().append("<div><embed src=" + previewLink + " width='100%' height='100%'></div>");
+          $('#myModal').modal('show');
+        } else {
+          alert('Preview not available');
+        }
       });
     }
   };
@@ -62,7 +67,7 @@ var PlayHaven = function() {
     }
   };
 
-  // Call helpers.doneTyping on last keystroke (on release) after 2 seconds
+  // Call helpers.doneTyping on last keystroke (on release) after 1 second
   $('#searchBox').keyup(function() {
     // Replace this with underscore's debounce method
     clearTimeout(timer);
