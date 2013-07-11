@@ -7,7 +7,7 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="apple.css">
     <script src="underscore-min.js"></script>
-    <script src="jquery.speechToText.min.js"></script>
+    <script src="jquery.speechtotext.min.js"></script>
     <script src="apple.js"></script>
   </head>
   <body>
