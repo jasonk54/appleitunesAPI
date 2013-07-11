@@ -85,4 +85,5 @@ var apple = function() {
 
 $(document).ready(function(){
   apple();
+  $('input').speechToText();
 });
