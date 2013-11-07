@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- jQuery CDN -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.1/jquery.min.js"></script>
+    <link href="libs/Flat-UI-master/css/bootstrap.css" rel="stylesheet">
+    <link href="libs/Flat-UI-master/css/flat-ui.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="apple.css">
+    
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="libs/underscore-min.js"></script>
+    
+    <script src="libs/jquery.speechtotext.min.js"></script>
+    <script src="libs/handlebars-v1.1.2.js"></script>
+    <script src="apple.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="search">
+        <input id="searchBox" class="span3" type="text" placeholder="Search Itunes" />
+        <div class="greetings">
+          <p><h4>Apple Itunes</h4></p>
+        </div>
+      </div>
+
+      <div class="side"></div>
+      
+      <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+          <h3>Preview</h3>
+        </div>
+        <div class="modal-body"></div>
+      </div>
+
+      <div class="content">
+        <h3>Search Results</h3>
+          <div class="searchContent"></div>
+      </div>
+
+      <script id="type-of-content" type="text/x-handlebars-template">
+          {{#if content}}
+            <h3>Available File Types</h3>
+            <div class="sidePanel">
+              <ul>
+                {{#each content}}
+                  <li class="type">{{this}}</li>
+                {{/each}}
+              </ul>
+            </div>
+          {{/if}}
+      </script>
+
+      <script id="content-template" type="text/x-handlebars-template">
+          {{#if content}}
+            <ul>
+              {{#each content}}
+                <div class="listing">
+                  <li class="contentlist">Name: {{artistName}}</li>
+                  <li class="contentlist">Track Name: {{trackName}}</li>
+                  <li class="contentlist">File Type: {{#typeOfFile kind}}{{/typeOfFile}}</li>
+                  <input type="button" class="preview btn btn-primary" data-previewfile="{{previewUrl}}" value="Preview"></input>
+                </div>
+              {{/each}}
+            </ul>
+          {{/if}}
+      </script>
+
+    </div>
+  </body>
+</html>

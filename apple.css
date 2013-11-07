@@ -2,12 +2,17 @@ body {
   background-color: #BDC3C7;
 }
 
+.container {
+  width: auto;
+  margin: 20px;
+}
+
 #myModal {
   background-color: #7F8C8D;
 }
 
 .modal-body {
-  height: 100px;
+  height: auto;
   width: auto;
 }
 
@@ -23,6 +28,10 @@ body {
   background-color: whitesmoke;
 }
 
+li {
+  list-style: none;
+}
+
 .content {
   display: none;
 
@@ -30,7 +39,7 @@ body {
   top: 5em;
   padding: 2em;
   border-radius: 10px;
-
+  width: auto;
   background-color: whitesmoke;
 }
 
@@ -53,4 +62,11 @@ body {
 .preview {
   margin-top: .5em;
   margin-bottom: 1em;
+}
+
+.listing {
+  width: auto;
+  border-bottom: 1px dotted rgb(131, 230, 206);
+  height: auto;
+  padding: 10px;
 }
